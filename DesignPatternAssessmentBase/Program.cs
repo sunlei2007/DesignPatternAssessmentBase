@@ -1,10 +1,12 @@
 ﻿
 using DesignPatternAssessmentBase.Models;
 
-Ticket bugReport = new BugReport();
+Ticket bugReport = new BugReport();  //Instance BugReport
+bugReport.HandleCalculateResponseDeadline();
 bugReport.HandleCalculateBreachDeadline();
 
-Ticket serviceRequest = new ServiceRequest();
+Ticket serviceRequest = new ServiceRequest();//Instance ServiceRequest
+serviceRequest.HandleCalculateResponseDeadline();
 serviceRequest.HandleCalculateBreachDeadline();
 
 public class BugReport : Ticket
@@ -65,7 +67,7 @@ public class CalutlateBugReport : ICalculateService
 
     public int CalculateResponseDeadline()
     {
-
+        //Algorithm: ResponseDeadline
         int baseResponseDeadline = 1;
         int multiplier = 2;
         int responseDeadline = baseResponseDeadline * 1 * multiplier;
@@ -75,7 +77,7 @@ public class CalutlateBugReport : ICalculateService
 
     public int CalculateBreachDeadline()
     {
-
+        //Algorithm: BreachDeadline
         int baseBreachDeadline = 0;
         int modifier = 100;
         int breachDeadline = baseBreachDeadline + 1 + modifier;
@@ -89,11 +91,13 @@ public class CalutlateServiceRequest : ICalculateService
 
     public int CalculateResponseDeadline()
     {
+        //Algorithm: ResponseDeadline
         return 0;
     }
 
     public int CalculateBreachDeadline()
     {
+        //Algorithm: BreachDeadline
         return 0;
     }
 }
