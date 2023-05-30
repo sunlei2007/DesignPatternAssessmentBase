@@ -47,6 +47,9 @@ namespace DesignPatternAssessmentBase.Models
         public virtual ICollection<ApplicationUser> TaskWatchers { get; set; } = new HashSet<ApplicationUser>();
         public virtual ICollection<Comment> Comment { get; set; } = new HashSet<Comment>();
 
-       
+        public ICalculateService CalulateHandler { get; set; }
+
+        public abstract int HandleCalculateResponseDeadline();
+        public abstract int HandleCalculateBreachDeadline();
     }
 }
